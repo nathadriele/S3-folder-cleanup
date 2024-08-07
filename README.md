@@ -44,3 +44,33 @@ pip install mage-ai boto3
 ```py
 mage secret set aws_access_key_id=<your_access_key> aws_secret_access_key=<your_secret_key>
 ```
+
+### Code Explanation
+
+#### Imports and Logging Configuration
+
+Here we import the necessary libraries and configure logging to capture and display information and errors during script execution.
+
+#### S3 Client Initialization
+
+This function initializes and returns an S3 client using AWS credentials stored in Mage.ai.
+
+#### Listing Objects in the S3 Folder
+
+This function lists the objects in the specified folder within the S3 bucket. In case of an error, the error is logged and the function returns an empty list.
+
+#### Deleting Objects in the S3 Folder
+
+This function deletes the specified objects in the S3 folder and logs each deletion operation. In case of an error, the error is logged.
+
+#### Loading and Processing Data
+
+This is the main function that integrates the other functions. It initializes the S3 client, configures the bucket and folder parameters, lists and deletes the objects, returning a success status at the end.
+
+#### Testing the Script Output
+
+This function tests the script's output to ensure that the objects were successfully deleted.
+
+### Contribution to Data Engineering
+
+This project demonstrates efficient data management by automating the cleanup of an S3 folder, ensuring organized and cost-effective storage. It highlights key data engineering practices such as automation, cloud service utilization (AWS S3), and secure credential handling with Mage.ai, making it a valuable example of modern data engineering solutions.
