@@ -1,5 +1,7 @@
 ## Automated S3 Folder Cleanup Data Engineering Script
 
+![image](https://github.com/user-attachments/assets/548154ff-795f-4967-8066-f0f96a57a90e)
+
 This repository contains an automation script developed on the Mage.ai platform. The script is responsible for listing and deleting objects in a specific folder within an S3 bucket on AWS. Below, we detail each important section to understand and use this script.
 
 ### Overview
