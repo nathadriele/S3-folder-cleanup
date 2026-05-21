@@ -19,7 +19,6 @@ def initialize_s3_client():
     return boto3.client('s3', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key)
 
 def list_objects_in_folder(s3, bucket_name, folder_prefix):
-    """List objects in the specified S3 folder."""
     try:
         response = s3.list_objects(Bucket=bucket_name, Prefix=folder_prefix)
         return response.get('Contents', [])
@@ -28,7 +27,6 @@ def list_objects_in_folder(s3, bucket_name, folder_prefix):
         return []
 
 def delete_objects_in_folder(s3, bucket_name, objects):
-    """Delete specified objects in the S3 folder."""
     for obj in objects:
         try:
             s3.delete_object(Bucket=bucket_name, Key=obj['Key'])
@@ -38,7 +36,6 @@ def delete_objects_in_folder(s3, bucket_name, objects):
 
 @data_loader
 def load_data(*args, **kwargs):
-    """Main function to load and process data."""
     s3 = initialize_s3_client()
     
     config_path = path.join(get_repo_path(), 'config.yaml')
@@ -57,6 +54,5 @@ def load_data(*args, **kwargs):
 
 @test
 def test_output(output, *args) -> None:
-    """Template code to test the block output."""
     assert output is not None, 'The output is undefined'
     assert output.get('status') == 'success', 'Failed to delete objects in S3'
